@@ -1,0 +1,9 @@
+*.pyc
+*.sqlite
+.DS_Store
+.coverage
+migrations
+tmp
+venv
+__pycache__
+env.sh
