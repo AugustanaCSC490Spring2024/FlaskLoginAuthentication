@@ -140,7 +140,15 @@ def secret():
     return 'Only authenticated users can see this!'
 ```
 
-### 10. Run Your App
+### 10. Protect your user password
+Use `from werkzeug.security import generate_password_hash, check_password_hash` to add a layer of protection into user password
+
+where `generate_password_hash(request.form.get("password"), method='scrypt')` will request the password in the registration and convert that into a hashed form with the 'scrypt' method from werkzeug library.
+
+to verify the password when the user login use the condition to check `check_password_hash(user.password, request.form.get("password"))`
+
+
+### 11. Run Your App
 
 Finally, run your Flask app:
 
