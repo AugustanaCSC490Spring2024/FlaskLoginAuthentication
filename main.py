@@ -7,7 +7,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SECRET_KEY"] = "abc"
 db = SQLAlchemy()
 
-# TODO: some code here
+# TODO: some configurations here
 
 
 class Users(UserMixin, db.Model):
@@ -21,6 +21,8 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all()
+
+# TODO: add user_loader here
 
 
 @app.route('/register', methods=["GET", "POST"])
